@@ -12,6 +12,9 @@
 		60C8A8252F759222009D5E28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60C8A8242F759222009D5E28 /* Assets.xcassets */; };
 		60C8A8282F759222009D5E28 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60C8A8272F759222009D5E28 /* Preview Assets.xcassets */; };
 		60C8A8392F7592F3009D5E28 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C8A8382F7592F3009D5E28 /* AppTheme.swift */; };
+		60C8A83C2F7593BD009D5E28 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C8A83B2F7593BD009D5E28 /* Deck.swift */; };
+		60C8A83E2F7593D4009D5E28 /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C8A83D2F7593D4009D5E28 /* Flashcard.swift */; };
+		60C8A8402F7593E5009D5E28 /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C8A83F2F7593E5009D5E28 /* Assignment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +24,9 @@
 		60C8A8242F759222009D5E28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60C8A8272F759222009D5E28 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		60C8A8382F7592F3009D5E28 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		60C8A83B2F7593BD009D5E28 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		60C8A83D2F7593D4009D5E28 /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
+		60C8A83F2F7593E5009D5E28 /* Assignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,9 @@
 		60C8A82E2F759266009D5E28 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				60C8A83B2F7593BD009D5E28 /* Deck.swift */,
+				60C8A83D2F7593D4009D5E28 /* Flashcard.swift */,
+				60C8A83F2F7593E5009D5E28 /* Assignment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -196,6 +205,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60C8A8402F7593E5009D5E28 /* Assignment.swift in Sources */,
+				60C8A83C2F7593BD009D5E28 /* Deck.swift in Sources */,
+				60C8A83E2F7593D4009D5E28 /* Flashcard.swift in Sources */,
 				60C8A8392F7592F3009D5E28 /* AppTheme.swift in Sources */,
 				60C8A8232F759217009D5E28 /* ContentView.swift in Sources */,
 				60C8A8212F759217009D5E28 /* SmartStudyApp.swift in Sources */,

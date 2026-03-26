@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct SmartStudyApp: App {
@@ -13,5 +14,6 @@ struct SmartStudyApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: [Deck.self, Flashcard.self, Assignment.self])
     }
 }
