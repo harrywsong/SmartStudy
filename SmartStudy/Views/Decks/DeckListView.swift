@@ -33,7 +33,10 @@ struct DeckListView: View {
                     ScrollView {
                         VStack(spacing: 16) {
                             ForEach(decks) { deck in
-                                DeckRowView(deck: deck)
+                                NavigationLink(destination: StudySessionView(deck: deck)) {
+                                    DeckRowView(deck: deck)
+                                }
+                                .buttonStyle(.plain)
                             }
                         }
                         .padding()
