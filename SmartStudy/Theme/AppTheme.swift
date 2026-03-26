@@ -23,4 +23,8 @@ struct AppTheme {
     static let tagRed    = Color(red: 0.95, green: 0.77, blue: 0.77)
 
     static let allTagColors = [tagGreen, tagBeige, tagPurple, tagRed]
+    static let tagColors = [tagGreen, tagBeige, tagPurple, tagRed]
+    
+    static let cornerMedium: CGFloat = 12
+
 }

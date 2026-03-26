@@ -9,13 +9,28 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+
+            // Tab 1 - Decks
+            DeckListView()
+                .tabItem {
+                    Label("Decks", systemImage: "rectangle.stack")
+                }
+
+            // Tab 2 - Progress
+            ProgressHomeView()
+                .tabItem {
+                    Label("Progress", systemImage: "chart.bar")
+                }
+
+            // Tab 3 - Assignments
+            AssignmentListView()
+                .tabItem {
+                    Label("Assignments", systemImage: "checklist")
+                }
+
         }
-        .padding()
+        .tint(AppTheme.accent) // makes the selected tab use our gold color
     }
 }
 
