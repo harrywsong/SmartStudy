@@ -19,6 +19,8 @@
 		60C8A8442F759627009D5E28 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C8A8432F759627009D5E28 /* ProgressView.swift */; };
 		60C8A8462F759657009D5E28 /* AssignmentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C8A8452F759657009D5E28 /* AssignmentListView.swift */; };
 		60C8A8482F7597C6009D5E28 /* DeckRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C8A8472F7597C6009D5E28 /* DeckRowView.swift */; };
+		60C8A84A2F759F6F009D5E28 /* StudySessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C8A8492F759F6F009D5E28 /* StudySessionView.swift */; };
+		60C8A84C2F759FED009D5E28 /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C8A84B2F759FED009D5E28 /* FlashCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		60C8A8432F759627009D5E28 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		60C8A8452F759657009D5E28 /* AssignmentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentListView.swift; sourceTree = "<group>"; };
 		60C8A8472F7597C6009D5E28 /* DeckRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckRowView.swift; sourceTree = "<group>"; };
+		60C8A8492F759F6F009D5E28 /* StudySessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySessionView.swift; sourceTree = "<group>"; };
+		60C8A84B2F759FED009D5E28 /* FlashCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,8 @@
 		60C8A8322F759281009D5E28 /* Study */ = {
 			isa = PBXGroup;
 			children = (
+				60C8A8492F759F6F009D5E28 /* StudySessionView.swift */,
+				60C8A84B2F759FED009D5E28 /* FlashCardView.swift */,
 			);
 			path = Study;
 			sourceTree = "<group>";
@@ -225,6 +231,8 @@
 				60C8A8232F759217009D5E28 /* ContentView.swift in Sources */,
 				60C8A8442F759627009D5E28 /* ProgressView.swift in Sources */,
 				60C8A8462F759657009D5E28 /* AssignmentListView.swift in Sources */,
+				60C8A84A2F759F6F009D5E28 /* StudySessionView.swift in Sources */,
+				60C8A84C2F759FED009D5E28 /* FlashCardView.swift in Sources */,
 				60C8A8212F759217009D5E28 /* SmartStudyApp.swift in Sources */,
 				60C8A8422F75960E009D5E28 /* DeckListView.swift in Sources */,
 			);
