@@ -18,6 +18,7 @@ struct StudySessionView: View {
     @State private var isFlipped: Bool = false
     @State private var correctCount: Int = 0
     @State private var sessionDone: Bool = false
+    @State private var showHint: Bool = false
 
     var cards: [Flashcard] { deck.cards }
 
@@ -84,7 +85,28 @@ struct StudySessionView: View {
                     Spacer()
 
                     FlashCardView(card: cards[currentIndex], isFlipped: $isFlipped)
-
+                   
+                    
+                    // Hint Button
+                    if !isFlipped && !cards[currentIndex].hint.isEmpty {
+                        Button(action: {
+                            showHint.toggle()
+                        }) {
+                            Text(showHint ? "Hide Hint" : "Show Hint")
+                                .font(.subheadline)
+                                .foregroundColor(AppTheme.accent)
+                        }
+                    }
+                    // Hint Text
+                    if showHint && !cards[currentIndex].hint.isEmpty {
+                        Text("💡 \(cards[currentIndex].hint)")
+                            .font(.subheadline)
+                            .foregroundColor(AppTheme.textGray)
+                            .padding(.horizontal)
+                            .multilineTextAlignment(.center)
+                    }
+                    
+                    
                     Spacer()
 
                     // Buttons only appear after flipping. Should we change?
@@ -131,6 +153,7 @@ struct StudySessionView: View {
         } else {
             currentIndex += 1
             isFlipped = false
+            showHint = false
         }
     }
 }
