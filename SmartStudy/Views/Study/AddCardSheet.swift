@@ -9,6 +9,7 @@ import SwiftData
 
 struct AddCardSheet: View {
     let deck: Deck
+    let cardToEdit: Flashcard?
 
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
@@ -16,6 +17,11 @@ struct AddCardSheet: View {
     @State private var front = ""
     @State private var back = ""
     @State private var hint = ""
+    
+    init(deck: Deck, cardToEdit: Flashcard? = nil) {
+        self.deck = deck
+        self.cardToEdit = cardToEdit
+    }
 
     var body: some View {
         NavigationStack {
@@ -33,7 +39,14 @@ struct AddCardSheet: View {
                     TextField("Enter hint", text: $hint)
                 }
             }
-            .navigationTitle("New Card")
+            .onAppear {
+                if let card = cardToEdit {
+                    front = card.front
+                    back = card.back
+                    hint = card.hint
+                }
+            }
+            .navigationTitle(cardToEdit == nil ? "New Card" : "Edit Card")
             .navigationBarTitleDisplayMode(.inline)
 
             .toolbar {
@@ -45,15 +58,21 @@ struct AddCardSheet: View {
 
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") {
-                        let card = Flashcard(
-                            front: front,
-                            back: back,
-                            hint: hint
-                        )
-
-                        deck.cards.append(card)
-                        context.insert(card)
-
+                        if let card = cardToEdit {
+                            card.front = front
+                            card.back = back
+                            card.hint = hint
+                            
+                        } else {
+                            let card = Flashcard(
+                                front: front,
+                                back: back,
+                                hint: hint
+                            )
+                            
+                            deck.cards.append(card)
+                            context.insert(card)
+                        }
                         try? context.save()
                         dismiss()
                     }

@@ -20,6 +20,7 @@ struct StudySessionView: View {
     @State private var sessionDone: Bool = false
     @State private var showHint: Bool = false
     @State private var showingAddCard = false
+    @State private var selectedCard: Flashcard? = nil
     
     var cards: [Flashcard] { deck.cards }
     
@@ -163,6 +164,14 @@ struct StudySessionView: View {
                             .multilineTextAlignment(.center)
                     }
                     
+                    Button {
+                        selectedCard = cards[currentIndex]
+                    } label: {
+                        Text("Edit Card")
+                            .font(.subheadline)
+                            .foregroundColor(AppTheme.accent)
+                    }
+                    
                     // Delete Card Button
                     Button(role: .destructive) {
                         deleteCurrentCard()
@@ -207,6 +216,9 @@ struct StudySessionView: View {
         // Add Card Sheet
         .sheet(isPresented: $showingAddCard) {
             AddCardSheet(deck: deck)
+        }
+        .sheet(item: $selectedCard) { card in
+            AddCardSheet(deck: deck, cardToEdit: card)
         }
         
         // Auto-hide hint when flipped
