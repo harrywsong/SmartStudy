@@ -18,6 +18,8 @@ struct DeckListView: View {
             ZStack {
                 AppTheme.background.ignoresSafeArea()
 
+                
+                
                 if decks.isEmpty {
                     // Empty state
                     VStack(spacing: 12) {
@@ -39,11 +41,49 @@ struct DeckListView: View {
                             NavigationLink(destination: StudySessionView(deck: deck)) {
                                 DeckRowView(deck: deck)
                             }
+                            .padding()
+                            .listRowInsets(EdgeInsets())
+                            .listRowSeparator(.hidden)
+                            .listRowBackground(Color.clear)
                         }
                         .onDelete(perform: deleteDeck)
                     }
                     .listStyle(.plain)
+                    .scrollContentBackground(.hidden)
+                    .background(Color.clear)
                 }
+            }
+            .safeAreaInset(edge: .top) {
+                HStack(spacing: 12) {
+                    miniCard {
+                        VStack {
+                            Text("\(decks.count)")
+                                .font(.title2)
+                                .foregroundColor(.yellow)
+                                .bold()
+                            Text("decks")
+                        }
+                    }
+                    miniCard {
+                        VStack {
+                            Text("\(decks.flatMap(\.cards).count)")
+                                .font(.title2)
+                                .foregroundColor(.green)
+                                .bold()
+                            Text("cards")
+                        }
+                    }
+                    miniCard {
+                        VStack {
+                            Text("\(decks.flatMap{ $0.cards}.filter{ $0.learningState == .mastered }.count)")
+                                .font(.title2)
+                                .foregroundColor(.purple)
+                                .bold()
+                            Text("mastered")
+                        }
+                    }
+                }
+                .padding(.horizontal)
             }
             .navigationTitle("My Decks")
 
@@ -72,6 +112,14 @@ struct DeckListView: View {
         }
 
         try? context.save()
+    }
+    
+    func miniCard<Content: View>(@ViewBuilder content: () -> Content) -> some View {
+        content()
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(Color.white)
+            .cornerRadius(AppTheme.cornerMedium)
     }
 }
 
