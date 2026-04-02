@@ -29,7 +29,7 @@ func insertSampleData() {
     let existing = try? context.fetch(FetchDescriptor<Deck>())
     if let existing, !existing.isEmpty { return }
 
-    // Create sample deck
+    // Created sample deck(will be replaced after add deck function is added)
     let deck = Deck(name: "Biology", emoji: "🧬")
 
     let card1 = Flashcard(

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EE24D842F7E05AF00B71642 /* AddDeckSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE24D832F7E05A000B71642 /* AddDeckSheet.swift */; };
+		5EE24D862F7E243200B71642 /* AddCardSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE24D852F7E242600B71642 /* AddCardSheet.swift */; };
 		60C8A8212F759217009D5E28 /* SmartStudyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C8A8202F759217009D5E28 /* SmartStudyApp.swift */; };
 		60C8A8232F759217009D5E28 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C8A8222F759217009D5E28 /* ContentView.swift */; };
 		60C8A8252F759222009D5E28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60C8A8242F759222009D5E28 /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5EE24D832F7E05A000B71642 /* AddDeckSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeckSheet.swift; sourceTree = "<group>"; };
+		5EE24D852F7E242600B71642 /* AddCardSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardSheet.swift; sourceTree = "<group>"; };
 		60C8A81D2F759217009D5E28 /* SmartStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60C8A8202F759217009D5E28 /* SmartStudyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartStudyApp.swift; sourceTree = "<group>"; };
 		60C8A8222F759217009D5E28 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 		60C8A8312F75927A009D5E28 /* Decks */ = {
 			isa = PBXGroup;
 			children = (
+				5EE24D832F7E05A000B71642 /* AddDeckSheet.swift */,
 				60C8A8412F75960E009D5E28 /* DeckListView.swift */,
 				60C8A8472F7597C6009D5E28 /* DeckRowView.swift */,
 			);
@@ -131,6 +136,7 @@
 		60C8A8322F759281009D5E28 /* Study */ = {
 			isa = PBXGroup;
 			children = (
+				5EE24D852F7E242600B71642 /* AddCardSheet.swift */,
 				60C8A8492F759F6F009D5E28 /* StudySessionView.swift */,
 				60C8A84B2F759FED009D5E28 /* FlashCardView.swift */,
 			);
@@ -224,7 +230,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				60C8A8402F7593E5009D5E28 /* Assignment.swift in Sources */,
+				5EE24D842F7E05AF00B71642 /* AddDeckSheet.swift in Sources */,
 				60C8A83C2F7593BD009D5E28 /* Deck.swift in Sources */,
+				5EE24D862F7E243200B71642 /* AddCardSheet.swift in Sources */,
 				60C8A83E2F7593D4009D5E28 /* Flashcard.swift in Sources */,
 				60C8A8392F7592F3009D5E28 /* AppTheme.swift in Sources */,
 				60C8A8482F7597C6009D5E28 /* DeckRowView.swift in Sources */,
