@@ -78,6 +78,20 @@ struct StudySessionView: View {
                         .font(.title3)
                         .foregroundColor(AppTheme.textGray)
                     
+                    List(cards) { card in
+                        HStack {
+                            Text(card.front)
+                            Spacer()
+                            if card.learningState == .mastered {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .foregroundColor(.green)
+                            } else {
+                                Image(systemName: "xmark.circle.fill")
+                                    .foregroundColor(.red)
+                            }
+                        }
+                    }
+                    
                     Spacer()
                     
                     Button("Done") {
