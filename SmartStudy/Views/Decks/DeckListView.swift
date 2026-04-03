@@ -12,6 +12,8 @@ struct DeckListView: View {
     @State private var showingAddDeck = false
     @Environment(\.modelContext) private var context
     @Query var decks: [Deck]
+    
+    @State private var selectedDeck: Deck?
 
     var body: some View {
         NavigationStack {
@@ -40,6 +42,9 @@ struct DeckListView: View {
                         ForEach(decks) { deck in
                             NavigationLink(destination: StudySessionView(deck: deck)) {
                                 DeckRowView(deck: deck)
+                                    .onLongPressGesture {
+                                        selectedDeck = deck
+                                    }
                             }
                             .padding()
                             .listRowInsets(EdgeInsets())
@@ -100,6 +105,9 @@ struct DeckListView: View {
 
             .sheet(isPresented: $showingAddDeck) {
                 AddDeckSheet()
+            }
+            .sheet(item: $selectedDeck) { deck in
+                AddDeckSheet(deckToEdit: deck)
             }
         }
     }

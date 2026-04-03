@@ -13,6 +13,12 @@ struct AddDeckSheet: View {
 
     @State private var name = ""
     @State private var emoji = "📚"
+    
+    let deckToEdit: Deck?
+    
+    init(deckToEdit: Deck? = nil) {
+        self.deckToEdit = deckToEdit
+    }
 
     var body: some View {
         NavigationStack {
@@ -22,7 +28,13 @@ struct AddDeckSheet: View {
                     TextField("Emoji (optional)", text: $emoji)
                 }
             }
-            .navigationTitle("New Deck")
+            .onAppear {
+                if let deck = deckToEdit {
+                    name = deck.name
+                    emoji = deck.emoji
+                }
+            }
+            .navigationTitle(deckToEdit == nil ? "New Deck" : "Edit Deck")
             .navigationBarTitleDisplayMode(.inline)
 
             .toolbar {
@@ -34,8 +46,13 @@ struct AddDeckSheet: View {
 
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") {
-                        let deck = Deck(name: name, emoji: emoji)
-                        context.insert(deck)
+                        if let deck = deckToEdit {
+                            deck.name = name
+                            deck.emoji = emoji
+                        } else {
+                            let deck = Deck(name: name, emoji: emoji)
+                            context.insert(deck)
+                        }
                         try? context.save()
                         dismiss()
                     }
