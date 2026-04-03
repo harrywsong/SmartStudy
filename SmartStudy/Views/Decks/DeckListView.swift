@@ -42,10 +42,13 @@ struct DeckListView: View {
                         ForEach(decks) { deck in
                             NavigationLink(destination: StudySessionView(deck: deck)) {
                                 DeckRowView(deck: deck)
-                                    .onLongPressGesture {
-                                        selectedDeck = deck
-                                    }
+                                    
                             }
+                            .simultaneousGesture(
+                                LongPressGesture().onEnded { _ in
+                                    selectedDeck = deck
+                                }
+                            )
                             .padding()
                             .listRowInsets(EdgeInsets())
                             .listRowSeparator(.hidden)
